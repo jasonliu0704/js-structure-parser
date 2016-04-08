@@ -1,0 +1,21 @@
+{  
+   "a":[  
+      "ForStatement"
+   ],
+   "b":[  
+      "SwitchStatement"
+   ],
+   "c":[  
+      {  
+         "type":"IfStatement",
+         "next":[  
+            {  
+               "type":"ForStatement",
+               "next":[  
+
+               ]
+            }
+         ]
+      }
+   ]
+}
