@@ -55,20 +55,23 @@ function hasnt(nodes, tokens){
 
 //traverse the ast to find token
 function tokenTraverse(nodes, token){
-	if(nodes.type = token){
+console.log(nodes);
+	if(nodes.type == token){
 		return true;
 	}else if(nodes.hasOwnProperty('consequent')){
+
 		for(var i=0; i<nodes.consequent.body.length; i++){
+			
 			if(tokenTraverse(nodes.consequent.body[i], token)){
 				return true;
 			}
 		}
-/*		return nodes.consequent.body.some(function(node){
-			if(tokenTraverse(node, token)){
+	}else if(nodes.hasOwnProperty('body') && nodes.body.type == "BlockStatement"){
+		for(var i=0; i<nodes.body.body.length; i++){
+			if(tokenTraverse(nodes.body.body[i], token)){
 				return true;
 			}
-		});
-*/
+		}
 	}else{
 		return false;
 	}
@@ -76,9 +79,12 @@ function tokenTraverse(nodes, token){
 
 function parseOut(schema, nodes){
 
+	//console.log(nodes);
+
 		// check whitelist
 		var count = 0;
 		var out = "attention: ";
+/*
 		for(var i=0; i<schema.a.length; i++){
 			for(var j=0; j<nodes.length; j++){
 				if(has(nodes[j], schema.a[i])){
@@ -91,8 +97,9 @@ function parseOut(schema, nodes){
 		if(count != schema.a.length){
 			out += "violate whitelist, ";
 		}
+*/
 
-		// check blacklist
+/*		// check blacklist
 		count = 0;
 		for(var i=0; i<schema.b.length; i++){
 			for(var j=0; j<nodes.length; j++){
@@ -108,8 +115,7 @@ function parseOut(schema, nodes){
 		if(count){
 			out += "violate blacklist, ";
 		}
-
-
+*/
 
 		// Determine the rough structure of the program
 		count = 0;

@@ -1,15 +1,40 @@
 
-$.getJSON("in.json", function(json) {
+/*$.getJSON("in.json", function(json) {
    			 test(json);
-});
+});*/
+
+var schema = {  
+   a:[  
+      "ForStatement"
+   ],
+   b:[  
+      "WhileStatement"
+   ],
+   c:[  
+      {  
+      	 has: true,
+         type:"IfStatement",
+         next:[  
+            {  
+               has: false,
+               type:"ForStatement",
+               next:[  
+
+               ]
+            }
+         ]
+      }
+   ]
+};
+
+test(schema);
 
 function test(schema) {
 	try{
 		var definition;
 		
 		var nodes = esprima.parse(editor.getValue()).body;
-				console.log(esprima.parse(editor.getValue()).body);
-
+				
 
 	}catch(err){
 		$("#result").text(err);
@@ -37,6 +62,8 @@ function test(schema) {
   	$("#editor").keyup(function() {
   		try{
 			nodes = esprima.parse(editor.getValue()).body;
+			
+
 		}catch(err){
 			$("#result").text(err);
 			return;

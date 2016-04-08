@@ -13,7 +13,7 @@ TODO: Write usage instructions
 
 node types:
 
-statement
+statement(Control flow, choice(if), Loops)
 expression
 declaraion
 
@@ -63,7 +63,6 @@ API quality:
 
 		support third party plugin between not quite stable
 
-	Both: has vague restriction for functions.(for example: parse and tokenize use together will result run time error)
 
 
 documentation:
