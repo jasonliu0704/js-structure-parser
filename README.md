@@ -1,5 +1,5 @@
 <snippet>
-  <content><![CDATA[
+  <content>
 # ${1:Building a Challenge Framework}
 
 ## Description:
