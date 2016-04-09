@@ -3,7 +3,7 @@
       "ForStatement"
    ],
    "b":[  
-      "ForInStatement"
+      "ExpressionStatement"
    ],
    "c":[  
       {  
@@ -12,7 +12,7 @@
          "next":[  
             {  
                "has": false,
-               "type":"ForStatement",
+               "type":"IfStatement",
                "next":[  
 
                ]

@@ -1,12 +1,18 @@
 
 // check whether b has structure a
 function structureCheck(a,b){
-	var c = search(a ,b);
-	if(c == null){
-		return false;
-	}else if(compare(a,c)){
-		return true;
-	}else if(c.hasOwnProperty('consequent') && c.consequent.body.length){
+
+	while(1){
+		var c = search(a ,b);
+		if(!c){
+			return false;
+		}else if(compare(a,c)){
+			return true;
+		}else{
+			c.type = "No";
+		}
+	}
+	/*}else if(c.hasOwnProperty('consequent') && c.consequent.body.length){
 		for(var i=0; i < c.consequent.body.length; i++){
 			if(structureCheck(a, c.consequent.body[i])){
 				return true;
@@ -22,7 +28,7 @@ function structureCheck(a,b){
 		return false;
 	}else{
 		return false;
-	}
+	}*/
 }
 
 // check which node of b is the same as the first node of a and return that
@@ -122,8 +128,14 @@ function compare(a,b){
 					return false;
 				}
 
-			// if be is exhausted
+			// if b is exhausted
 			}else{
+				//take care of the case when b is exhausted while a is not and a.has == false 
+				for(var i=0; i<a.next.length; i++){
+					if(a.next[i].has == false){
+						return true
+					}
+				}
 				return false;
 			}
 			
@@ -174,7 +186,7 @@ function tokenTraverse(nodes, token){
 
 function parseOut(schema, nodes){
 
-	//console.log(nodes);
+	
 
 		// check whitelist
 		var count = 0;
@@ -199,7 +211,7 @@ function parseOut(schema, nodes){
 		for(var i=0; i<schema.b.length; i++){
 			for(var j=0; j<nodes.length; j++){
 				if(has(nodes[j], schema.b[i])){
-					//console.log(nodes);
+					
 					count++;
 					break;
 				}
@@ -222,7 +234,7 @@ function parseOut(schema, nodes){
 			}
 		}
 		
-		
+		console.log(count);
 
 		if(count != schema.c.length){
 			out += "violate the structure definition.";
