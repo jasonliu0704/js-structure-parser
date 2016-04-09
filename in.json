@@ -3,12 +3,12 @@
       "ForStatement"
    ],
    "b":[  
-      "SwitchStatement"
+      "ForInStatement"
    ],
    "c":[  
       {  
     	 "has": true,
-         "type":"IfStatement",
+         "type":"WhileStatement",
          "next":[  
             {  
                "has": false,

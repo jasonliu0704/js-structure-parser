@@ -1,9 +1,9 @@
 
-/*$.getJSON("in.json", function(json) {
+$.getJSON("in.json", function(json) {
    			 test(json);
-});*/
+});
 
-var schema = {  
+/*var schema = {  
    a:[  
       "ForStatement"
    ],
@@ -25,15 +25,16 @@ var schema = {
          ]
       }
    ]
-};
+};*/
 
-test(schema);
+
 
 function test(schema) {
 	try{
 		var definition;
 		
 		var nodes = esprima.parse(editor.getValue()).body;
+		console.log(nodes);
 				
 
 	}catch(err){
