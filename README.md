@@ -4,7 +4,7 @@
 
 ## Description:
 
-This is a javascript api testing framework that will allow you to write coding in a code editor , take an input json file
+This is a javascript api testing framework that allows you to write code in a code editor , take an input json file
 (I set a json file on local but I intend my program can be able to get json file from a remote api endpoint by changing the getJSON paremeter)
 to setup a few rules you want your codes to have and finally judge whether your code follows the rules.
 
@@ -28,7 +28,7 @@ How to define your rules?
 	{
 		"a":[String],
 		"b":[String],
-		"c":[{"not":  Boolean,
+		"c":[{"has":  Boolean,
 			"type": String,
 			"next":[this] 
 		}]
@@ -37,7 +37,7 @@ How to define your rules?
 	a is an array of whitelist functionality
 	b is an array of blacklist functionality
 	c is an array of rough structure definition
-	("not" to indicate whether this node must contain or must not contain, "type" is the type of the funtionality, "next" is an array of child nodes)
+	("has" to indicate whether this node must contain or must not contain, "type" is the type of the funtionality, "next" is an array of child nodes)
 
 	functionality refers to AST node
 
@@ -68,7 +68,7 @@ API quality:
 		well tested from its big community(jquery) usage and support
 
 	Acron: 
-		has the same features as Esprima in terms of parsing ability except has slightly more options and parsing single strings separately.
+		has the same features as Esprima in terms of parsing ability except has slightly more options
 
 		support functionalities to deal with AST nodes
 
@@ -86,7 +86,7 @@ documentation:
 		helpful documentation for potiential developers and contributors
 
 	Acron: 
-		we can get almost all the information we want from the documentation but it lacks some details about its other functions other than the main parser.
+		we can get almost all the information we want from the documentation but it lacks some details about its functions other than the main parser.
 
 		error in documentation.(for example tokenizer function won't work, tokenize work)
 
@@ -95,7 +95,7 @@ browser compatibility:
 	Esprima runs on web browsers (IE 8+, modern browsers) as well as Rhino, Nashorn, and Node.js.
 
 Conlusion:
-	They tie in browser compatibility. Even though Acron is slightly faster and smaller, Esprima has way much better documentation, API quality and community support since implementation based on vague documentation might lead to bugs in the future and good community support guarantees sustainibility of the library and more improvement for the long run. Even though Acorn and Esprima are both esay to use, uncertainy of Acorn might crach my program in the future.
+	They tie in browser compatibility. Even though Acron is slightly faster and smaller, Esprima has way much better documentation, API quality and community support since implementation based on vague documentation might lead to bugs in the future and good community support guarantees sustainibility of the library and more improvement in the long run. Even though Acorn and Esprima are both esay to use, uncertainy of Acorn might crach my program in the future.
 	Therefore, I choose Esprime.
 
 ## TODO 
