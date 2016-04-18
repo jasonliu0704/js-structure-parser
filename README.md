@@ -56,7 +56,7 @@ How to define your rules?
 
 
 ## leveraging between Esprima and Acorn
-performance: on large files, Esprima is slightly faster than Acorn.
+performance: on large files, Acorn is slightly faster than Esprima.
 
 file size:Esprima is bigger than Acorn in terms of file size but it supports CDN. This won't affect end user experience and esprima file isn't that big enough to cost too much resources on server. Therefore, Acorn is slightly better.
 
