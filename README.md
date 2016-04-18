@@ -55,10 +55,10 @@ How to define your rules?
 
 
 
-## leveraging between Esprima and Acron
+## leveraging between Esprima and Acorn
 performance: on large files, Esprima is slightly faster than Acorn.
 
-file size:Esprima is bigger than Acron in terms of file size but it supports CDN. This won't affect end user experience and esprima file isn't that big enough to cost too much resources on server. Therefore, Acron is slightly better.
+file size:Esprima is bigger than Acorn in terms of file size but it supports CDN. This won't affect end user experience and esprima file isn't that big enough to cost too much resources on server. Therefore, Acorn is slightly better.
 
 API quality:
 
@@ -67,7 +67,7 @@ API quality:
 
 		well tested from its big community(jquery) usage and support
 
-	Acron: 
+	Acorn: 
 		has the same features as Esprima in terms of parsing ability except has slightly more options
 
 		support functionalities to deal with AST nodes
@@ -85,7 +85,7 @@ documentation:
 		has details about test benchmarks and browser support
 		helpful documentation for potiential developers and contributors
 
-	Acron: 
+	Acorn: 
 		we can get almost all the information we want from the documentation but it lacks some details about its functions other than the main parser.
 
 		error in documentation.(for example tokenizer function won't work, tokenize work)
@@ -95,7 +95,7 @@ browser compatibility:
 	Esprima runs on web browsers (IE 8+, modern browsers) as well as Rhino, Nashorn, and Node.js.
 
 Conlusion:
-	They tie in browser compatibility. Even though Acron is slightly faster and smaller, Esprima has way much better documentation, API quality and community support since implementation based on vague documentation might lead to bugs in the future and good community support guarantees sustainibility of the library and more improvement in the long run. Even though Acorn and Esprima are both esay to use, uncertainy of Acorn might crach my program in the future.
+	They tie in browser compatibility. Even though Acorn is slightly faster and smaller, Esprima has way much better documentation, API quality and community support since implementation based on vague documentation might lead to bugs in the future and good community support guarantees sustainibility of the library and more improvement in the long run. Even though Acorn and Esprima are both esay to use, uncertainy of Acorn might crach my program in the future.
 	Therefore, I choose Esprime.
 
 ## TODO 
